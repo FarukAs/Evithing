@@ -3,16 +3,18 @@ import UIKit
 class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate {
     
     
-    @IBOutlet var myButton: UIButton!
     @IBOutlet var myTableView: UITableView!
     
     
+    @IBOutlet var segmentedControl: UISegmentedControl!
     
     
     override func viewDidLoad() {
         myTableView.delegate = self
         myTableView.dataSource = self
         
+        
+      
     }
     
     
