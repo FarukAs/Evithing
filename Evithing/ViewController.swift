@@ -1,19 +1,29 @@
-//
-//  ViewController.swift
-//  Evithing
-//
-//  Created by Şeyda Soylu on 19.02.2023.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate {
+    
+    
+    @IBOutlet var myButton: UIButton!
+    @IBOutlet var myTableView: UITableView!
+    
+    
+    
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        myTableView.delegate = self
+        myTableView.dataSource = self
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = myTableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath as IndexPath)
+        cell.textLabel?.text = "Selam"
+        return cell
     }
 
-
 }
-
